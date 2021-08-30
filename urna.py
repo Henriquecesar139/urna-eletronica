@@ -1,11 +1,13 @@
 #Colocar o som no bptão confirmar
 
 from tkinter import *
+from pygame import mixer
 
 #Funções
 
 #Função que captura o número do botão pressionado
 def votar(num):
+    audio(1)
     num_voto = num['text']
     if voto[0] == '-':
         voto.remove(voto[0])
@@ -32,6 +34,7 @@ def remover():
 
 #Função que Confirma o voto
 def confirmar():
+    audio(2)
     global voto, voto1, voto2, voto3
     if voto == candidato1:
         voto1 = voto1 + 1
@@ -54,6 +57,16 @@ def candidatos():
     elif voto == candidato3:
         candidato_lb['text'] = 'candidato3'
     
+def audio(audio):
+    if audio == 1:
+        mixer.init()
+        mixer.music.load('som.mp3')
+        mixer.music.play()
+    elif audio == 2:
+        mixer.init()
+        mixer.music.load('som2.mp3')
+        mixer.music.play()
+
 
 #Tela
 tela = Tk()
