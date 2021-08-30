@@ -60,11 +60,11 @@ def candidatos():
 def audio(audio):
     if audio == 1:
         mixer.init()
-        mixer.music.load('som.mp3')
+        mixer.music.load('arq/som.mp3')
         mixer.music.play()
     elif audio == 2:
         mixer.init()
-        mixer.music.load('som2.mp3')
+        mixer.music.load('arq/som2.mp3')
         mixer.music.play()
 
 
@@ -73,12 +73,12 @@ tela = Tk()
 tela.geometry('250x360')
 tela.resizable(False, False)
 tela.title('Urna eletônica')
-tela.iconbitmap('urna.ico')
+tela.iconbitmap('arq/urna.ico')
 
 #Label
 voto = ['-', '-']
 voto_lb = Label (text = voto, font="impact 30 bold")
-voto_lb.place(x = 90, y = 50)
+
 
 candidato_lb = Label (tela, text = '')
 
@@ -118,8 +118,8 @@ n8.place(x = 90, y = 250)
 n9.place(x = 150, y = 250)
 confir.place(x = 30, y = 300)
 delete.place(x = 150, y = 300)
-candidato_lb.pack(side = TOP)
-
+candidato_lb.pack(side = TOP, anchor = W)
+voto_lb.place(x = 90, y = 50)
 
 tela.mainloop()
 #=============#
