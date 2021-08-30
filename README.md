@@ -25,4 +25,4 @@
 <li>A votação será encerrada quando a janela for fechada, uma nova janela mostrará o resultado da votação</li>
 </ul>
 
-<img src="urna.png" alt="Foto da Urna">
+<img src="arq/urna.png" alt="Foto da Urna">
