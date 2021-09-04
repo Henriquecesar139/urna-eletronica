@@ -90,8 +90,6 @@ candidato1 = ['4', '5']
 candidato2 = ['2', '3']
 candidato3 = ['1', '5']
 
-#Variáveis que contam os votos
-
 #Botões, Labels e posicionamentos
 
 n1 = Button (tela, width = 4,height = 2, text = '1', command = lambda : votar(n1))
