@@ -1,18 +1,22 @@
 from tkinter import *
 
+#Função que deleta os votos do arquivo votos.txt
 def delete():
     voto = open('votos.txt', 'w')
 
+#Tela
 tela = Tk()
 tela.geometry('480x320')
 tela.title('MENU')
 tela.iconbitmap('arq/urna.ico')
 tela.resizable(False, False)
 
+#variáveis com os votos inciais
 voto1 = 0
 voto2 = 0
 voto3 = 0
 
+#loop que conta os votos
 try:
     votos = open('votos.txt', 'r')  
     for voto in votos:
@@ -28,6 +32,8 @@ try:
 except:
     votos = open('votos.txt', 'w')
 
+
+#Label e button 
 
 msg = Label (tela, font = "impact 30", text = f' \ncandidato1: {voto1} \ncandidato2: {voto2} \ncandidato3: {voto3}')
 msg.pack(side = TOP)
