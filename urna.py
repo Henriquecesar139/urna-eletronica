@@ -3,8 +3,6 @@
 from tkinter import *
 from pygame import mixer
 
-mixer.init()
-
 #Funções
 
 #Função que captura o número do botão pressionado
@@ -36,18 +34,19 @@ def remover():
 
 #Função que Confirma o voto
 def confirmar():
+    global voto
     audio(2)
-    global voto, voto1, voto2, voto3
     if voto == candidato1:
-        voto1 = voto1 + 1
+        arquivo.writelines('1\n')
     elif voto == candidato2:
-        voto2 = voto2 + 1
+        arquivo.writelines('2\n')
     elif voto == candidato3:
-        voto3 = voto3 + 1
+        arquivo.writelines('3\n')
     else:
         pass
     voto = ['-', '-']
     voto_lb['text'] = voto
+    
 
 #Função que exibe o nome dos candidatos
 def exibir_candidatos():
@@ -68,6 +67,14 @@ def audio(audio):
         mixer.music.load('arq/som2.mp3')
         mixer.music.play()
 
+mixer.init()
+
+#Abre o arquivo de texto, caso ele não exista, o código irá criar um
+
+try:
+    arquivo = open('votos.txt', 'a')
+except:
+    arquivo = open('votos.txt', 'a')
 
 #Tela
 tela = Tk()
@@ -84,9 +91,6 @@ candidato2 = ['2', '3']
 candidato3 = ['1', '5']
 
 #Variáveis que contam os votos
-voto1 = 0
-voto2 = 0
-voto3 = 0
 
 #Botões, Labels e posicionamentos
 
@@ -131,20 +135,3 @@ candidato_lb.pack(side = TOP, anchor = W)
 
 
 tela.mainloop()
-
-#=============#
-
-#Tela de resultados (Essa tela irá aparecer quando a tela da urna for fechada)
-resultado = Tk()
-resultado.resizable(False, False)
-resultado.geometry('400x150')
-resultado.title('Resultado')
-
-#Mensagem de Resultados
-result = Label (resultado, text = f'''Candidato1:  {voto1}  voto (s)
-candidato2:  {voto2}  voto (s)
-candidato3:  {voto3}  voto (s)''', font = 'impact 20 bold')
-result.pack(side = TOP)
-
-
-resultado.mainloop()
