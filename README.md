@@ -22,7 +22,14 @@
 <br>
 <li>Caso tenha digitado outro número, clique no botão 'del'</li>
 <br>
-<li>A votação será encerrada quando a janela for fechada, uma nova janela mostrará o resultado da votação</li>
+<li>Para conferir o resultado, abra o arquivo menu.py</li>
 </ul>
 
+
 <img src="arq/urna.png" alt="Foto da Urna">
+
+<hr>
+
+<p><en>Os votos são armazenados no arquivo 'votos.txt', isso permite armazenar votos de diversas execuções da urna</en></p>
+
+<p><b>Para deletar os votos salvos, abra o arquivo 'menu.py' e clique no botão de apagar votos computados, ou delete o arquivo 'votos.txt'</b></p>
