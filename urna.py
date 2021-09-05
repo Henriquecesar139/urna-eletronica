@@ -1,5 +1,3 @@
-#Colocar o som no bptão confirmar
-
 from tkinter import *
 from pygame import mixer
 
