@@ -79,7 +79,6 @@ tela = Tk()
 tela.geometry('220x360')
 tela.resizable(False, False)
 tela.title('Urna')
-tela.iconbitmap('arq/urna.ico')
 
 voto = ['-', '-']
 
@@ -123,7 +122,7 @@ confir.place(x = 30, y = 300)
 delete = Button (tela, text = 'del', fg = 'white', bg = 'red', width = 4, command = remover)
 delete.place(x = 150, y = 300)
 
-voto_lb = Label (text = voto, font="impact 30 bold")
+voto_lb = Label (text = voto, font="arial 30 bold")
 voto_lb.place(x = 90, y = 50)
 
 candidato_lb = Label (tela, text = '')
