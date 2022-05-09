@@ -8,7 +8,6 @@ def delete():
 tela = Tk()
 tela.geometry('480x320')
 tela.title('MENU')
-tela.iconbitmap('arq/urna.ico')
 tela.resizable(False, False)
 
 #variáveis com os votos inciais
@@ -35,7 +34,7 @@ except:
 
 #Label e button 
 
-msg = Label (tela, font = "impact 30", text = f' \ncandidato1: {voto1} \ncandidato2: {voto2} \ncandidato3: {voto3}')
+msg = Label (tela, font = "arial 30", text = f' \ncandidato1: {voto1} \ncandidato2: {voto2} \ncandidato3: {voto3}')
 msg.pack(side = TOP)
 
 reset = Button (tela, text = 'Deletar votos computados', command = delete, width = 60, height = 4, bg = 'red', fg = 'white')
