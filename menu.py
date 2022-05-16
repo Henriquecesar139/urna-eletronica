@@ -1,44 +1,29 @@
 from tkinter import *
+from os import system, name
 
-#Função que deleta os votos do arquivo votos.txt
-def delete():
-    voto = open('votos.txt', 'w')
+if name == 'nt':
+    exec = 'python'
+else:
+    exec = 'python3'
 
-#Tela
+def votar():
+    system(f'{exec} urna.py')
+def cadastrar():
+    system(f'{exec} cadastro.py')
+def resultado():
+    system(f'{exec} resultado.py')
+
 tela = Tk()
-tela.geometry('480x320')
-tela.title('MENU')
 tela.resizable(False, False)
+tela.geometry('400x300')
+tela.title('menu')
+cadastro = Button(tela, text = 'Cadastrar candidato', width = 30, height = 3, command = cadastrar)
+cadastro.pack(side = TOP)
 
-#variáveis com os votos inciais
-voto1 = 0
-voto2 = 0
-voto3 = 0
+voto = Button(tela, text = 'Votar', width = 30, height = 3, command = votar)
+voto.pack(side = TOP)
 
-#loop que conta os votos
-try:
-    votos = open('votos.txt', 'r')  
-    for voto in votos:
-        if int(voto) == 1:
-            voto1 = voto1 + 1
-        elif int(voto) == 2:
-            voto2 = voto2 + 1
-        elif int(voto) == 3:
-            voto3 = voto3 + 1
-        else:
-            pass
-
-except:
-    votos = open('votos.txt', 'w')
-
-
-#Label e button 
-
-msg = Label (tela, font = "arial 30", text = f' \ncandidato1: {voto1} \ncandidato2: {voto2} \ncandidato3: {voto3}')
-msg.pack(side = TOP)
-
-reset = Button (tela, text = 'Deletar votos computados', command = delete, width = 60, height = 4, bg = 'red', fg = 'white')
-reset.pack(side = BOTTOM)
-
+result = Button(tela, text = 'Resultado', width = 30, height = 3, command = resultado)
+result.pack(side = TOP)
 
 tela.mainloop()
