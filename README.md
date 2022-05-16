@@ -1,35 +1,30 @@
-<h1>Urna Eletrônica</h1>
-
-<h2>Uma urna eletrônica feita em python, usando o módulo Tkinter</h2>
-
-<p>A urna apresenta 3 candidatos: </p>
-
-<ul>
-
-<li> Candidato 1 (número: 45)</li>
-<li> Candidato 2 (número: 23)</li>
-<li> Candidato 3 (número: 15)</li>
-
-</ul>
+<h1>Urna eletrônica</h1>
+<h2>Urna eletrônica feita em python</h2>
 
 <h3>Como usar: </h3>
-
-<ul>
-
-<li>Digite um número de um dos candidatos (45, 23 ou 15) </li>
-<br>
-<li>Clique no botão 'confirmar' </li>
-<br>
-<li>Caso tenha digitado outro número, clique no botão 'del'</li>
-<br>
-<li>Para conferir o resultado, abra o arquivo menu.py</li>
-</ul>
-
-
-<img src="arq/urna.png" alt="Foto da Urna">
-
 <hr>
+<strong>Abra o Menu</strong>
+<p>Abra o menu (menu.py) para acessar as funcionalidades</p>
 
-<p><en>Os votos são armazenados no arquivo 'votos.txt', isso permite armazenar votos de diversas execuções da urna</en></p>
+<img src="arq/menu.png" width="80%">
 
-<p><b>Para deletar os votos salvos, abra o arquivo 'menu.py' e clique no botão de apagar votos computados, ou delete o arquivo 'votos.txt'</b></p>
+<br>
+
+<strong>Cadastre alguns candidatos: </strong>
+<p>Selecione a opção de cadastrar candidatos e cadastre alguns nomes e números</p>
+
+<img src="arq/cadastro.png" width="80%">
+
+<br>
+
+<strong>Hora de votar!</strong>
+<p>Digite o número do candidato que deseja votar e confirma, se errar o número, pressiona o botão de deletar</p>
+
+<img src="arq/urna.png" width="80%">
+
+<br>
+
+<strong>Conferindo os resultados</strong>
+<p>Selecione a opção de resultado e confira os resultados da votação</p>
+
+<img src="arq/resultado.png" width="80%">
