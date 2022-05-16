@@ -1,24 +1,28 @@
 from tkinter import *
+from os import system, name
 from pygame import mixer
 
-#Funções
-
-#Função que captura o número do botão pressionado
+#funções
 def votar(num):
-    audio(1)
     num_voto = num['text']
     if voto[0] == '-':
         voto.remove(voto[0])
         voto.insert(0, num_voto)
-        exibir_candidatos()
         voto_lb['text'] = voto
     elif voto[1] == '-':
         voto.remove(voto[1])
         voto.insert(1, num_voto)
         voto_lb['text'] = voto
-        exibir_candidatos()
+    exibir_candidato()
+    
 
-#Função que deleta um número digitado
+def exibir_candidato():
+    try:
+        if int(''.join(voto)) in numeros:
+            candidato_lb['text'] = candidatos[numeros.index(int(''.join(voto)))]
+    except:
+        pass
+
 def remover():
     candidato_lb['text'] = ''
     if voto[1] != '-':
@@ -30,49 +34,26 @@ def remover():
         voto.insert(0, '-')
         voto_lb['text'] = voto
 
-#Função que Confirma o voto
 def confirmar():
     global voto
-    audio(2)
-    if voto == candidato1:
-        arquivo.writelines('1\n')
-    elif voto == candidato2:
-        arquivo.writelines('2\n')
-    elif voto == candidato3:
-        arquivo.writelines('3\n')
-    else:
+    try:
+        if int(''.join(voto)) in numeros:
+            arq2.write(f'{"".join(voto)} ')
+        audio()
+    except:
         pass
     voto = ['-', '-']
     voto_lb['text'] = voto
-    
-
-#Função que exibe o nome dos candidatos
-def exibir_candidatos():
     candidato_lb['text'] = ''
-    if voto == candidato1:
-        candidato_lb['text'] = 'candidato1'
-    elif voto == candidato2:
-        candidato_lb['text'] = 'candidato2'
-    elif voto == candidato3:
-        candidato_lb['text'] = 'candidato3'
 
-#Função de áudio  
-def audio(audio):
-    if audio == 1:
-        mixer.music.load('arq/som.mp3')
-        mixer.music.play()
-    elif audio == 2:
-        mixer.music.load('arq/som2.mp3')
-        mixer.music.play()
-
-mixer.init()
-
-#Abre o arquivo de texto, caso ele não exista, o código irá criar um
-
-try:
-    arquivo = open('votos.txt', 'a')
-except:
-    arquivo = open('votos.txt', 'a')
+def audio():
+    mixer.music.load('arq/som.mp3')
+    mixer.music.play()
+    
+if name == 'nt':
+    exec = 'python'
+else:
+    exec = 'python3'
 
 #Tela
 tela = Tk()
@@ -80,12 +61,25 @@ tela.geometry('220x360')
 tela.resizable(False, False)
 tela.title('Urna')
 
+mixer.init()
+
 voto = ['-', '-']
 
-#Número dos candidatos
-candidato1 = ['4', '5']
-candidato2 = ['2', '3']
-candidato3 = ['1', '5']
+#abre o arquivo com os candidatos e os números
+try:
+    arq = open('candidatos.txt', 'r')
+    arq2 = open('votos.txt', 'w')
+except:
+    system(f'{exec} aviso.py')
+    exit()
+
+candidatos = []
+numeros = []
+
+for cand in arq:
+    candidatos.append(cand.split('|')[0])
+    numeros.append(int(cand.split('|')[1]))
+
 
 #Botões, Labels e posicionamentos
 
@@ -116,10 +110,13 @@ n8.place(x = 90, y = 250)
 n9 = Button (tela, width = 4, height = 2, text = '9', command = lambda : votar(n9))
 n9.place(x = 150, y = 250)
 
-confir = Button (tela, text = 'confirmar', bg = 'green', fg = 'white', width = 8, command = confirmar)
+confir = Button (tela, text = 'confirma', bg = 'green', fg = 'white', width = 4, height = 2, command = confirmar)
 confir.place(x = 30, y = 300)
 
-delete = Button (tela, text = 'del', fg = 'white', bg = 'red', width = 4, command = remover)
+n0 = Button (tela, width = 4, height = 2, text = '0', command = lambda : votar(n0))
+n0.place(x = 90, y = 300)
+
+delete = Button (tela, text = 'del', fg = 'white', bg = 'red', width = 4, height = 2, command = remover)
 delete.place(x = 150, y = 300)
 
 voto_lb = Label (text = voto, font="arial 30 bold")
