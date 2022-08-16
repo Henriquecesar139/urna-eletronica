@@ -1,30 +1,69 @@
-<h1>Urna eletrônica</h1>
-<h2>Urna eletrônica feita em python</h2>
+<h1 align="center">Urna eletrônica</h1>
+<h2 align="center">Urna eletrônica feita em python</h2>
 
-<h3>Como usar: </h3>
 <hr>
-<strong>Abra o Menu</strong>
-<p>Abra o menu (menu.py) para acessar as funcionalidades</p>
-
-<img src="arq/menu.png" width="45%">
 
 <br>
 
-<strong>Cadastre alguns candidatos: </strong>
-<p>Selecione a opção de cadastrar candidatos e cadastre alguns nomes e números</p>
-
-<img src="arq/cadastro.png" width="45%">
+<h3 align="center">Instalando os requisitos</h3>
 
 <br>
 
-<strong>Hora de votar!</strong>
-<p>Digite o número do candidato que deseja votar e confirma, se errar o número, pressiona o botão de deletar</p>
+<p>Abra um <b>TERMINAL</b> ou <b>CMD</b> na pasta do projeto e digite: </p>
 
-<img src="arq/urna.png" width="45%">
+<pre>pip install -r req.txt</pre>
+
+<p>Isso irá fazer com que o <b>PIP</b> instale os pacotes necessários</p>
 
 <br>
 
-<strong>Conferindo os resultados</strong>
-<p>Selecione a opção de resultado e confira os resultados da votação</p>
+<hr>
 
-<img src="arq/resultado.png" width="45%">
+<h3 align="center">Como usar: </h3>
+
+<br>
+
+
+<strong>Abrindo o Menu</strong>
+<p>Execute o arquivo <b>menu.py</b> para acessar as funcionalidades</p>
+
+<br>
+
+<p>Linux: </p>
+<pre>python3 menu.py</pre>
+
+<p>Windows: </p>
+<pre>python menu.py</pre>
+
+<en>A seguinte janela deve ser exibida: </en>
+
+<img src="arq/menu.png">
+
+<br>
+
+<strong>Cadastrando candidatos</strong>
+
+<p>Ao clicar na primeira opção, a seguinte janela irá ser exibida: </p>
+<img src="arq/cadastro.png">
+
+<br>
+
+<p>Ao cadastrar os candidatos desejados, feche a janela</p>
+
+<hr>
+
+<br>
+
+<strong>Hora de votar !</strong>
+
+<p>Clicando na segunda opção, a seguinte janela irá ser exibida:</p>
+<img src="arq/urna.png">
+<p>Digite o número do candidato desejado e aperta no botão '<b>confirma</b>'</p>
+<p>Caso tenha errado o número, clique no botão '<b>del</b>'</p>
+
+<p>Após todos votarem, feche a janela</p>
+<hr>
+<br>
+<strong>Conferindo o resultado</strong>
+<p>Clicando na última opção deverá ser exibida uma janela contendo o nome dos candidatos e o número de votos</p>
+<img src="arq/resultado.png">
