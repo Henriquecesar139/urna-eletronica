@@ -1,5 +1,6 @@
 <h1 align="center">Urna eletrônica</h1>
 <h2 align="center">Urna eletrônica feita em python</h2>
+<i>(Exclusiva para presidente)</i>
 
 <hr>
 
@@ -35,7 +36,7 @@
 <p>Windows: </p>
 <pre>python menu.py</pre>
 
-<en>A seguinte janela deve ser exibida: </en>
+A seguinte janela deve ser exibida:
 
 <img src="arq/menu.png">
 
