@@ -7,11 +7,11 @@ else:
     exec = 'python3'
 
 def votar():
-    system(f'{exec} urna.py')
+    system(f'{exec} janelas/urna.py')
 def cadastrar():
-    system(f'{exec} cadastro.py')
+    system(f'{exec} janelas/cadastro.py')
 def resultado():
-    system(f'{exec} resultado.py')
+    system(f'{exec} janelas/resultado.py')
 
 tela = Tk()
 tela.resizable(False, False)
