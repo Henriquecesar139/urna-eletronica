@@ -123,7 +123,7 @@ voto_lb = Label (text = voto, font="arial 30 bold")
 voto_lb.place(x = 90, y = 50)
 
 candidato_lb = Label (tela, text = '')
-candidato_lb.pack(side = TOP, anchor = W)
+candidato_lb.pack(side = TOP)
 
 
 tela.mainloop()
