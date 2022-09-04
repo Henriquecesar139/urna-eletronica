@@ -4,14 +4,16 @@ def cadastro():
     try:
         candidato = nome.get()
         numero = int(num.get())
-        arq.write(f'{candidato}|{numero}\n')
-        msg3['text'] = 'Cadastrado com sucesso'
-        msg3['fg'] = 'green'
+        partido = part.get()
+        arq.write(f'{candidato} ({partido}) |{numero}\n')
+        aviso['text'] = 'Cadastrado com sucesso'
+        aviso['fg'] = 'green'
         nome.delete(0, 'end')
         num.delete(0, "end")
+        part.delete(0, "end")
     except:
-        msg3['fg'] = 'red'
-        msg3['text'] = 'falha ao cadastrar candidato'
+        aviso['fg'] = 'red'
+        aviso['text'] = 'falha ao cadastrar candidato'
 
 arq = open('candidatos.txt', 'w')
 
@@ -32,8 +34,14 @@ msg2.pack(side = TOP)
 num = Entry(tela)
 num.pack(side = TOP)
 
-msg3 = Label(tela)
+msg3 = Label(tela, text = '\nPartido')
 msg3.pack(side = TOP)
+part = Entry(tela)
+part.pack(side = TOP)
+
+
+aviso = Label(tela)
+aviso.pack(side = TOP)
 
 cadastrar = Button (tela, text = 'Cadastrar', width = 20, bg = 'green', fg = 'white', command = cadastro)
 cadastrar.pack(side = BOTTOM)
