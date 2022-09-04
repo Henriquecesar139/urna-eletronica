@@ -2,7 +2,7 @@ from tkinter import *
 from os import system, name
 
 tela = Tk()
-tela.geometry('200x200')
+tela.geometry('300x300')
 tela.resizable(False, True)
 tela.title('resultado')
 
@@ -19,7 +19,7 @@ try:
     arq1 = open('candidatos.txt', 'r')
     arq2 = open('votos.txt', 'r')
 except:
-    system(f'{exec} janelas/aviso.py')
+    system(f'{exec} aviso.py')
     exit()
 
 
