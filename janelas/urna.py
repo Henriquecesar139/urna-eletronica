@@ -1,5 +1,5 @@
 from tkinter import *
-from os import system, name
+from os import system, name, stat
 from pygame import mixer
 
 #funções
@@ -70,6 +70,10 @@ try:
     arq = open('dados/candidatos.txt', 'r')
     arq2 = open('dados/votos.txt', 'w')
 except:
+    system(f'{exec} janelas/aviso.py')
+    exit()
+
+if stat('dados/candidatos.txt').st_size == 0:
     system(f'{exec} janelas/aviso.py')
     exit()
 
