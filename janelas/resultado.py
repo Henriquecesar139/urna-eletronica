@@ -16,8 +16,8 @@ else:
     exec = 'python3'
 
 try:
-    arq1 = open('candidatos.txt', 'r')
-    arq2 = open('votos.txt', 'r')
+    arq1 = open('dados/candidatos.txt', 'r')
+    arq2 = open('dados/votos.txt', 'r')
 except:
     system(f'{exec} aviso.py')
     exit()

@@ -67,8 +67,8 @@ voto = ['-', '-']
 
 #abre o arquivo com os candidatos e os números
 try:
-    arq = open('candidatos.txt', 'r')
-    arq2 = open('votos.txt', 'w')
+    arq = open('dados/candidatos.txt', 'r')
+    arq2 = open('dados/votos.txt', 'w')
 except:
     system(f'{exec} janelas/aviso.py')
     exit()

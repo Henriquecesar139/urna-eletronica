@@ -15,7 +15,7 @@ def cadastro():
         aviso['fg'] = 'red'
         aviso['text'] = 'falha ao cadastrar candidato'
 
-arq = open('candidatos.txt', 'w')
+arq = open('dados/candidatos.txt', 'w')
 
 tela = Tk()
 tela.geometry('220x360')
